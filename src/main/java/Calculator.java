@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * 
  * Class Calculator. Just a implementation of a simple calculator. 
@@ -12,6 +14,8 @@
  **/
 public class Calculator {
 	
+	//DecimalFormat df = new DecimalFormat("#0.00");
+	
 	/**
 	 * Add- add two doubles.
 	 * @param firstNumber : the first number as a double
@@ -20,6 +24,7 @@ public class Calculator {
 	 * @return: the result of the addition.
 	 * */
 	public double add(double firstNumber, double secondNumber){
+		
 		return firstNumber+secondNumber;
 	}
 	
