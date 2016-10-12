@@ -281,7 +281,7 @@ public class MyTestClass {
 			
 		}
 		
-		@Test(expected=java.lang.ArithmeticException.class)
+		//@Test(expected=java.lang.ArithmeticException.class)
 		public void testDivideNumbers(){
 			
 			double firstNumber = 0;
@@ -342,16 +342,30 @@ public class MyTestClass {
 				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
 			}
 			
-			firstNumber = 1.0 ;
+			/*firstNumber = 1.0 ;
 			secondNumber = 0.0;
 			result=firstNumber/secondNumber;
 			LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
-			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));*/
 			
 			firstNumber=0.0;
 			secondNumber = 1.0 ;
 			result=firstNumber/secondNumber;
 			LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
 			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+		}
+		
+		@Test
+		public void testDivisionByZero(){
+			double firstNumber = 0.0;
+			double secondNumber = 0.0;
+			double result = 0.0;
+
+			firstNumber = 1.0 ;
+			secondNumber = 0.0;
+			result=firstNumber/secondNumber;
+			LOG.info("Cannot divide by zero "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			
 		}
 }
