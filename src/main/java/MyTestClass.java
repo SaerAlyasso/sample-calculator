@@ -22,7 +22,7 @@ public class MyTestClass {
 	double value2=0.0;
 	int p = 0;
 	
-	/*@Test
+	@Test
 	public void testAdd() {
 		
 				
@@ -54,7 +54,7 @@ public class MyTestClass {
 		}
 				
 	}
-	*/
+	
 		@Test
 		public void testAddNumbers(){
 			
@@ -115,6 +115,18 @@ public class MyTestClass {
 				LOG.info("Testing the method add with "+firstNumber+" and "+secondNumber);
 				assertEquals(Math.round(cal.add(firstNumber, secondNumber)), Math.round(result));
 			}
+			
+			firstNumber = 1 ;
+			secondNumber = 0;
+			result=firstNumber+secondNumber;
+			LOG.info("Testing the method add with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.add(firstNumber, secondNumber)), Math.round(result));
+			
+			firstNumber=0;
+			secondNumber = 1 ;
+			result=firstNumber+secondNumber;
+			LOG.info("Testing the method add with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.add(firstNumber, secondNumber)), Math.round(result));
 			
 		}
 
@@ -179,8 +191,22 @@ public class MyTestClass {
 				assertEquals(Math.round(cal.subtract(firstNumber, secondNumber)), Math.round(result));
 			}
 			
+			firstNumber = 1 ;
+			secondNumber = 0;
+			result=firstNumber-secondNumber;
+			LOG.info("Testing the method subtract with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.subtract(firstNumber, secondNumber)), Math.round(result));
+			
+			firstNumber=0;
+			secondNumber = 1 ;
+			result=firstNumber-secondNumber;
+			LOG.info("Testing the method subtract with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.subtract(firstNumber, secondNumber)), Math.round(result));
+			
+			
 		}
 		
+		@Test
 		public void testMultiplyNumbers(){
 			
 			double firstNumber = 0;
@@ -241,5 +267,91 @@ public class MyTestClass {
 				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
 			}
 			
+			firstNumber = 1 ;
+			secondNumber = 0;
+			result=firstNumber*secondNumber;
+			LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			
+			firstNumber=0;
+			secondNumber = 1 ;
+			result=firstNumber*secondNumber;
+			LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			
+		}
+		
+		@Test(expected=java.lang.ArithmeticException.class)
+		public void testDivideNumbers(){
+			
+			double firstNumber = 0;
+			double secondNumber = 0;
+			double result = 0;
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*10));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*10));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*100));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*100));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*1000));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*1000));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*10-10));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*10-10));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*100-100));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*100-100));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*1000-1000));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*1000-1000));
+				result = firstNumber / secondNumber;
+				
+				LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			firstNumber = 1.0 ;
+			secondNumber = 0.0;
+			result=firstNumber/secondNumber;
+			LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
+			
+			firstNumber=0.0;
+			secondNumber = 1.0 ;
+			result=firstNumber/secondNumber;
+			LOG.info("Testing the method divide with "+firstNumber+" and "+secondNumber);
+			assertEquals(Math.round(cal.divide(firstNumber, secondNumber)), Math.round(result));
 		}
 }
