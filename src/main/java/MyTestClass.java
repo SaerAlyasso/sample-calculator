@@ -180,4 +180,66 @@ public class MyTestClass {
 			}
 			
 		}
+		
+		public void testMultiplyNumbers(){
+			
+			double firstNumber = 0;
+			double secondNumber = 0;
+			double result = 0;
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*10));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*10));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*100));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*100));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*1000));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*1000));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*10-10));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*10-10));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*100-100));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*100-100));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+			for(int i=0; i<=10;i++){
+				firstNumber = Double.valueOf(df.format(rand.nextDouble()*1000-1000));
+				secondNumber = Double.valueOf(df.format(rand.nextDouble()*1000-1000));
+				result = firstNumber * secondNumber;
+				
+				LOG.info("Testing the method multiply with "+firstNumber+" and "+secondNumber);
+				assertEquals(Math.round(cal.multiply(firstNumber, secondNumber)), Math.round(result));
+			}
+			
+		}
 }
