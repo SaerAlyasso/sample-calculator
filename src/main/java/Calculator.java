@@ -59,10 +59,10 @@ public class Calculator {
 	 * */
 	public double divide(double firstNumber, double secondNumber){
 		
-		if(secondNumber==0.0){
+		/*if(secondNumber==0.0){
 			
-			throw new java.lang.ArithmeticException("Cannot divide by zero");
-		}
+		throw new java.lang.ArithmeticException("Cannot divide by zero");
+		}*/
 		
 		return firstNumber/secondNumber;
 	}
